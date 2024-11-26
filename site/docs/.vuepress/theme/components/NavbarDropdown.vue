@@ -65,7 +65,7 @@ const isLastItemOfArray = (item, arr) => arr[arr.length - 1] === item;
       class="navbar-dropdown-title-mobile"
       type="button"
       :aria-label="dropdownAriaLabel"
-      @click="open = !open"
+      @click="(open = !open)"
     >
       <Translate v-if="item.text === 'Languages'" />
       <span class="title" v-else>{{ item.text }}</span>
@@ -86,8 +86,8 @@ const isLastItemOfArray = (item, arr) => arr[arr.length - 1] === item;
                 :item="child"
                 @focusout="
                   isLastItemOfArray(child, item.children) &&
-                    child.children.length === 0 &&
-                    (open = false)
+                  child.children.length === 0 &&
+                  (open = false)
                 "
               />
 
@@ -104,8 +104,8 @@ const isLastItemOfArray = (item, arr) => arr[arr.length - 1] === item;
                   :item="grandchild"
                   @focusout="
                     isLastItemOfArray(grandchild, child.children) &&
-                      isLastItemOfArray(child, item.children) &&
-                      (open = false)
+                    isLastItemOfArray(child, item.children) &&
+                    (open = false)
                   "
                 />
               </li>
