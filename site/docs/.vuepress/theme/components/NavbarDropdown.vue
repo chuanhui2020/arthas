@@ -65,7 +65,7 @@ const isLastItemOfArray = (item, arr) => arr[arr.length - 1] === item;
       class="navbar-dropdown-title-mobile"
       type="button"
       :aria-label="dropdownAriaLabel"
-      @click="(open = !open)"
+      @click="open = !open"
     >
       <Translate v-if="item.text === 'Languages'" />
       <span class="title" v-else>{{ item.text }}</span>
